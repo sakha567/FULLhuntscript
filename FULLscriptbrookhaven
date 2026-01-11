@@ -1,0 +1,155 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Gui = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local input = Instance.new("TextBox")
+local UICorner = Instance.new("UICorner")
+local unlock = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local UICorner_3 = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Gui.Name = "Gui"
+Gui.Parent = ScreenGui
+Gui.BackgroundColor3 = Color3.fromRGB(255, 41, 45)
+Gui.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Gui.BorderSizePixel = 0
+Gui.Position = UDim2.new(0.37348178, 0, 0.13636364, 0)
+Gui.Size = UDim2.new(0, 221, 0, 320)
+
+TextLabel.Parent = Gui
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 41, 45)
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.0985915512, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 173, 0, 63)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "waittt key system duluuuu"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextLabel_2.Parent = Gui
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 41, 45)
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.0462685153, 0, 0.221302316, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "buat dapet keynya dm ke tiktok :"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+TextLabel_3.Parent = Gui
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 41, 45)
+TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Position = UDim2.new(0.0464385003, 0, 0.379880518, 0)
+TextLabel_3.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "watup_TXT"
+TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextWrapped = true
+
+input.Name = "input"
+input.Parent = Gui
+input.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+input.BorderColor3 = Color3.fromRGB(0, 0, 0)
+input.BorderSizePixel = 0
+input.Position = UDim2.new(0.0452488698, 0, 0.578125, 0)
+input.Size = UDim2.new(0, 200, 0, 50)
+input.Font = Enum.Font.SourceSans
+input.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+input.PlaceholderText = "masukin keynya di sini"
+input.Text = ""
+input.TextColor3 = Color3.fromRGB(0, 0, 0)
+input.TextSize = 14.000
+
+UICorner.Parent = input
+
+unlock.Name = "unlock"
+unlock.Parent = Gui
+unlock.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+unlock.BorderColor3 = Color3.fromRGB(0, 0, 0)
+unlock.BorderSizePixel = 0
+unlock.Position = UDim2.new(0.0452488698, 0, 0.784375012, 0)
+unlock.Size = UDim2.new(0, 200, 0, 50)
+unlock.Font = Enum.Font.SourceSans
+unlock.Text = "unlock"
+unlock.TextColor3 = Color3.fromRGB(255, 255, 255)
+unlock.TextScaled = true
+unlock.TextSize = 14.000
+unlock.TextWrapped = true
+
+UICorner_2.Parent = unlock
+
+UICorner_3.Parent = Gui
+
+-- Scripts:
+
+local function LCGI_fake_script() -- Gui.LocalScript 
+	local script = Instance.new('LocalScript', Gui)
+
+	local Players = game:GetService("Players")
+	local player = Players.LocalPlayer
+	
+	-- ===== CONFIG =====
+	local CORRECT_KEY = "WATUP_KEY123"
+	-- ==================
+	
+	-- memory global (tetap hidup di executor)
+	getgenv().KEY_UNLOCKED = getgenv().KEY_UNLOCKED or false
+	
+	-- GUI (dibuat manual)
+	local keyFrame = script.Parent
+	local input = keyFrame:WaitForChild("input")
+	local unlock = keyFrame:WaitForChild("unlock")
+	
+	-- ===== SCRIPT UTAMA =====
+	local function MainScript()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/sakha567/Watupbannedfile/refs/heads/main/Watupbannedplayer.txt")
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/sakha567/control0omv2/refs/heads/main/control0omv2.txt")
+		-- === TARUH SCRIPT EXECUTOR KAMU DI SINI ===
+		-- contoh executor-only:
+		-- loadstring(game:HttpGet("URL_KAMU"))()
+	end
+	-- =======================
+	
+	-- JIKA SUDAH PERNAH UNLOCK
+	if getgenv().KEY_UNLOCKED then
+		keyFrame.Visible = false
+		MainScript()
+		return
+	end
+	
+	-- DEFAULT (belum unlock)
+	keyFrame.Visible = true
+	
+	unlock.MouseButton1Click:Connect(function()
+		if input.Text == CORRECT_KEY then
+			getgenv().KEY_UNLOCKED = true
+	
+			keyFrame.Visible = false
+			MainScript()
+		else
+			player:Kick("kok keynya salah?")
+		end
+	end)
+	
+end
+coroutine.wrap(LCGI_fake_script)()
